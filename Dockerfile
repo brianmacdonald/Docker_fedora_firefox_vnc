@@ -10,7 +10,7 @@ xterm xorg-x11-font \
 xulrunner-26.0-2.fc20.x86_64 \
 dejavu-sans-fonts \
 dejavu-serif-fonts \
-xdotool && yum clean all
+xdotool && dnf clean all
 
 # Add the xstartup file into the image
 ADD ./xstartup /
