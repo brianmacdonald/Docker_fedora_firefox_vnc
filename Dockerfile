@@ -1,5 +1,5 @@
 FROM fedora
-MAINTAINER scollier <thisDarkerHorse@gmail.com>
+MAINTAINER theDarkerHorse <thisDarkerHorse@gmail.com>
 
 # Install the appropriate software
 RUN dnf -y update && dnf clean all
