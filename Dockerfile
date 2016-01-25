@@ -1,16 +1,17 @@
-FROM fedora
-MAINTAINER theDarkerHorse <thisDarkerHorse@gmail.com>
+ROM fedora:20
+MAINTAINER scollier <emailscottcollier@gmail.com>
 
 # Install the appropriate software
-RUN dnf -y update && dnf clean all
-RUN dnf -y install x11vnc \
+RUN yum -y update && yum clean all
+RUN yum -y install x11vnc \
 firefox xorg-x11-server-Xvfb \
 xorg-x11-twm tigervnc-server \
 xterm xorg-x11-font \
 xulrunner-26.0-2.fc20.x86_64 \
 dejavu-sans-fonts \
 dejavu-serif-fonts \
-xdotool && dnf clean all
+xdotool && yum clean all
+RUN yum -y install net-tools
 
 # Add the xstartup file into the image
 ADD ./xstartup /
@@ -24,4 +25,4 @@ RUN sed -i '/\/etc\/X11\/xinit\/xinitrc-common/a [ -x /usr/bin/firefox ] && /usr
 EXPOSE 5901
 
 CMD    ["vncserver", "-fg" ]
-# ENTRYPOINT ["vncserver", "-fg" ] 
+#ENTRYPOINT ["vncserver", "-fg" ]
