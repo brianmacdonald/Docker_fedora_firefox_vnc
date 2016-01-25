@@ -16,7 +16,7 @@ xdotool && dnf clean all
 ADD ./xstartup /
 
 RUN mkdir /.vnc
-RUN x11vnc -storepasswd 123456 /.vnc/passwd
+#RUN x11vnc -storepasswd 123456 /.vnc/passwd
 RUN  \cp -f ./xstartup /.vnc/.
 RUN chmod -v +x /.vnc/xstartup
 RUN sed -i '/\/etc\/X11\/xinit\/xinitrc-common/a [ -x /usr/bin/firefox ] && /usr/bin/firefox &' /etc/X11/xinit/xinitrc
