@@ -1,4 +1,4 @@
-ROM fedora:20
+FROM fedora:20
 MAINTAINER scollier <emailscottcollier@gmail.com>
 
 # Install the appropriate software
